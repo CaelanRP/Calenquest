@@ -55,6 +55,7 @@
      <Compile Include="Assets\Calen.cs" />
      <Compile Include="Assets\CalenDebug.cs" />
      <Compile Include="Assets\CalenStats.cs" />
+     <Compile Include="Assets\CameraController.cs" />
      <Compile Include="Assets\Cutscene.cs" />
      <Compile Include="Assets\SceneAction.cs" />
  <Reference Include="UnityEngine.UI">

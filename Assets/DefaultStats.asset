@@ -21,6 +21,6 @@ MonoBehaviour:
   maxTorque: 0
   jumpForce: 250
   jumpForceBig: 330
-  bigJumpDelay: 0.1
+  bigJumpDelay: 0.07
   groundRaycastDistance: 2
   maxJumpAngle: 90
