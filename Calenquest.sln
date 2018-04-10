@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calenquest", "Assembly-CSharp.csproj", "{F034A0FC-1362-2647-4F77-9603CCEB426B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calenquest", "Assembly-CSharp-Editor.csproj", "{F2665A78-2DD9-2DC3-7BDD-DEC3AB012E51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F034A0FC-1362-2647-4F77-9603CCEB426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F034A0FC-1362-2647-4F77-9603CCEB426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F034A0FC-1362-2647-4F77-9603CCEB426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F034A0FC-1362-2647-4F77-9603CCEB426B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2665A78-2DD9-2DC3-7BDD-DEC3AB012E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2665A78-2DD9-2DC3-7BDD-DEC3AB012E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2665A78-2DD9-2DC3-7BDD-DEC3AB012E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2665A78-2DD9-2DC3-7BDD-DEC3AB012E51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
