@@ -51,13 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\animSpeed.cs" />
-     <Compile Include="Assets\Calen.cs" />
-     <Compile Include="Assets\CalenDebug.cs" />
-     <Compile Include="Assets\CalenStats.cs" />
-     <Compile Include="Assets\CameraController.cs" />
-     <Compile Include="Assets\Cutscene.cs" />
-     <Compile Include="Assets\SceneAction.cs" />
+     <Compile Include="Assets\CutsceneManager.cs" />
+     <Compile Include="Assets\Scripts\animSpeed.cs" />
+     <Compile Include="Assets\Scripts\Calen.cs" />
+     <Compile Include="Assets\Scripts\CalenDebug.cs" />
+     <Compile Include="Assets\Scripts\CalenStats.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Cutscene.cs" />
+     <Compile Include="Assets\Scripts\SceneAction.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/2017.1.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

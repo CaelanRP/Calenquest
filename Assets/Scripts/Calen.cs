@@ -48,6 +48,8 @@ public class Calen : MonoBehaviour {
 			Jump();
 			Debug.Log("Jumping");
 		}
+
+		TestInteract();
 	}
 
 	public void HandleInputFixed(){
@@ -67,6 +69,32 @@ public class Calen : MonoBehaviour {
 		if (!jumping){
 			StartCoroutine(JumpRoutine());
 		}
+	}
+
+	void TestInteract(){
+		if (Input.GetButtonDown("Interact")){
+			Cutscene trigger = ActiveTrigger();
+			if (trigger != null){
+				trigger.Activate();
+			}
+		}
+	}
+
+	// Slow method, don't call this every frame
+	Cutscene ActiveTrigger(){
+		Physics2D.queriesHitTriggers = true;
+		RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, stats.interactionRange, Vector2.up, 0.01f);
+		if (hits.Length > 0){
+			RaycastHit2D closestHit = hits[0];
+			for(int i = 0; i < hits.Length; i++){
+				Cutscene c = hits[i].collider.gameObject.GetComponent<Cutscene>();
+				if (c && ((hits[i].distance < closestHit.distance) || (closestHit.collider.gameObject.GetComponent<Cutscene>() == null))) {
+					closestHit = hits[i];
+				}
+			}
+			return closestHit.collider.gameObject.GetComponent<Cutscene>();
+		}
+		return null;
 	}
 
 	IEnumerator JumpRoutine(){

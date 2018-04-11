@@ -24,3 +24,4 @@ MonoBehaviour:
   bigJumpDelay: 0.07
   groundRaycastDistance: 2
   maxJumpAngle: 90
+  interactionRange: 4

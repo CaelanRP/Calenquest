@@ -10,5 +10,7 @@ public class CalenStats : ScriptableObject{
 	public float maxTorque;
 
 	public float jumpForce, jumpForceBig, bigJumpDelay, groundRaycastDistance, maxJumpAngle;
+
+	public float interactionRange;
 	
 }
