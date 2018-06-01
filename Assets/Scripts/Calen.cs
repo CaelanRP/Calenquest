@@ -72,9 +72,9 @@ public class Calen : MonoBehaviour {
 	}
 
 	void TestInteract(){
-		if (Input.GetButtonDown("Interact")){
-			Cutscene trigger = ActiveTrigger();
-			if (trigger != null){
+		Cutscene trigger = ActiveTrigger();
+		if (trigger != null){
+			if (Input.GetButtonDown("Interact")){
 				trigger.Activate();
 			}
 		}

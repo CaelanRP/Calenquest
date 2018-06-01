@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CutsceneManager.cs" />
+     <Compile Include="Assets\DialogueBox.cs" />
      <Compile Include="Assets\Scripts\animSpeed.cs" />
      <Compile Include="Assets\Scripts\Calen.cs" />
      <Compile Include="Assets\Scripts\CalenDebug.cs" />
