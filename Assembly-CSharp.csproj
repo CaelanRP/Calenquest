@@ -51,8 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CutsceneManager.cs" />
-     <Compile Include="Assets\DialogueBox.cs" />
      <Compile Include="Assets\Rewired\Integration\UnityUI\RewiredStandaloneInputModule.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\ControllerTemplates\ControllerTemplates.cs" />
      <Compile Include="Assets\Rewired\Internal\Scripts\DataStorage\UserDataStore_PlayerPrefs.cs" />
@@ -65,7 +63,10 @@
      <Compile Include="Assets\Scripts\CalenStats.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Cutscene.cs" />
+     <Compile Include="Assets\Scripts\CutsceneManager.cs" />
      <Compile Include="Assets\Scripts\CutsceneTrigger.cs" />
+     <Compile Include="Assets\Scripts\DialogueBox.cs" />
+     <Compile Include="Assets\Scripts\NonRotatingChild.cs" />
      <Compile Include="Assets\Scripts\SceneAction.cs" />
      <Compile Include="Assets\Scripts\Triggerable.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

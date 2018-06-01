@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class Calen : MonoBehaviour {
 
@@ -10,11 +11,16 @@ public class Calen : MonoBehaviour {
 	public LayerMask terrainLayers;
 	public Transform groundRaycastPos;
 	public bool jumping;
+
+	public SpriteRenderer exclamation;
+
+	public static Rewired.Player player;
 	// Use this for initialization
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 	}
 	void Start () {
+		player = ReInput.players.GetPlayer(0);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +31,7 @@ public class Calen : MonoBehaviour {
 	void FixedUpdate(){
 		UpdateGravity();
 		UpdateDrag();
-		rb.AddTorque(Input.GetAxis("Horizontal") * -stats.rotateForceAir);
+		rb.AddTorque(player.GetAxis("MoveHorizontal") * -stats.rotateForceAir);
 		rb.angularVelocity = Mathf.Clamp(rb.angularVelocity,-stats.maxTorque,stats.maxTorque);
 		HandleInputFixed();
 	}
@@ -44,23 +50,22 @@ public class Calen : MonoBehaviour {
 	}
 
 	public void HandleInput(){
-		if (grounded && Input.GetButtonDown("Jump")){
+		if (grounded && player.GetButtonDown("Jump")){
 			Jump();
 			Debug.Log("Jumping");
 		}
-
 		TestInteract();
 	}
 
 	public void HandleInputFixed(){
 		if (!strafing){
-			rb.AddForce(Vector2.right * Input.GetAxis("Horizontal") * stats.walkForceGrounded);
+			rb.AddForce(Vector2.right * player.GetAxis("MoveHorizontal") * stats.walkForceGrounded);
 		}
 		if (touchingGround){
-			rb.AddTorque(Input.GetAxis("Horizontal") * -stats.rotateForceGround);
+			rb.AddTorque(player.GetAxis("MoveHorizontal") * -stats.rotateForceGround);
 		}
 		else{
-			rb.AddTorque(Input.GetAxis("Horizontal") * -stats.rotateForceAir);
+			rb.AddTorque(player.GetAxis("MoveHorizontal") * -stats.rotateForceAir);
 		}
 		rb.angularVelocity = Mathf.Clamp(rb.angularVelocity,-stats.maxTorque,stats.maxTorque);
 	}
@@ -74,10 +79,11 @@ public class Calen : MonoBehaviour {
 	void TestInteract(){
 		Triggerable trigger = ActiveTrigger();
 		if (trigger != null){
-			if (Input.GetButtonDown("Interact")){
+			if (player.GetButtonDown("Interact")){
 				trigger.Trigger();
 			}
 		}
+		exclamation.enabled = (trigger != null);
 	}
 
 	// Slow method, don't call this every frame
