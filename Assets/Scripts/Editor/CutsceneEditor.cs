@@ -24,13 +24,21 @@ public class CutsceneEditor : Editor {
 		showActions = EditorGUILayout.Foldout(showActions, "Actions");
 		if (showActions){
 			int size = actionsProp.arraySize;
-			for(int i = 0; i < size; i++){
-				DrawActionInspector(cutscene.actions[i], i);
+			if (size > 0){
+				for(int i = 0; i < size; i++){
+					DrawActionInspector(cutscene.actions[i], i);
+					// Draw the new button
+					if(GUILayout.Button("Add Action Here"))
+					{
+						AddAction(i + 1);
+					}
+				}
 			}
-
-			if(GUILayout.Button("Add Action"))
-			{
-				AddAction();
+			else{
+				if(GUILayout.Button("Add Action"))
+					{
+						AddAction(0);
+					}
 			}
 		}
 
@@ -55,6 +63,12 @@ public class CutsceneEditor : Editor {
 				DestroyImmediate (action.gameObject);
 				return;
 			}
+			if (GUILayout.Button("^", GUILayout.Width (20))) {
+				actionsProp.MoveArrayElement (index, index - 1);
+			}
+			if (GUILayout.Button("v", GUILayout.Width (20))) {
+				actionsProp.MoveArrayElement (index, index + 1);
+			}
 			// Title of action
 			EditorGUILayout.LabelField(action.gameObject.name, GUILayout.Width (180));
 			// action type
@@ -68,14 +82,14 @@ public class CutsceneEditor : Editor {
 
 	}
 
-	void AddAction(){
+	void AddAction(int index){
 		GameObject actionObject = new GameObject();
 		actionObject.transform.parent = cutscene.transform;
 		actionObject.transform.localPosition = Vector3.zero;
 		SceneAction newAction = actionObject.AddComponent<SceneAction>();
 				
-		actionsProp.InsertArrayElementAtIndex(actionsProp.arraySize);
-		actionsProp.GetArrayElementAtIndex(actionsProp.arraySize - 1).objectReferenceValue = newAction;
+		actionsProp.InsertArrayElementAtIndex(index);
+		actionsProp.GetArrayElementAtIndex(index).objectReferenceValue = newAction;
 	}
 
 	void DrawInfo_Dialogue(SceneAction action){

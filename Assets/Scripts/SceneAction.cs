@@ -29,11 +29,21 @@ public class SceneAction : MonoBehaviour {
 		if (actionType == Type.Wait){
 			StartCoroutine(Wait(waitTime));
 		}
+
+		else if (actionType == Type.DialogueLine){
+			StartCoroutine(DisplayDialogue(dialogueLine));
+		}
 	}
 
 	IEnumerator Wait(float seconds){
 		Debug.Log("Waiting...");
 		yield return new WaitForSeconds(seconds);
+		Finish();
+	}
+
+	IEnumerator DisplayDialogue(string text){
+		Debug.Log("Playing cutscene...");
+		yield return DialogueBox.instance.DisplayDialogue(text);
 		Finish();
 	}
 
