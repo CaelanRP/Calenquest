@@ -16,8 +16,8 @@ MonoBehaviour:
   airDrag: 0
   walkForceGrounded: 300
   footGravForce: 0
-  rotateForceGround: 1500
-  rotateForceAir: 1500
+  rotateForceGround: 3000
+  rotateForceAir: 3000
   maxTorque: 0
   jumpForce: 250
   jumpForceBig: 330

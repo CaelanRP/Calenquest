@@ -26,6 +26,10 @@ public class CutsceneEditor : Editor {
 			int size = actionsProp.arraySize;
 			if (size > 0){
 				for(int i = 0; i < size; i++){
+					if (cutscene.actions[i] == null){
+						actionsProp.DeleteArrayElementAtIndex(i);
+						continue;
+					}
 					DrawActionInspector(cutscene.actions[i], i);
 					// Draw the new button
 					if(GUILayout.Button("Add Action Here"))
@@ -98,13 +102,18 @@ public class CutsceneEditor : Editor {
 
 	void DrawInfo(SceneAction action){
 		if (action.actionType == SceneAction.Type.DialogueLine){
-			action.dialogueLine = EditorGUILayout.TextArea(action.dialogueLine, GUILayout.ExpandHeight(true), GUILayout.MaxHeight(60));
+			action.actionString2 = EditorGUILayout.TextField("Speaker name", action.actionString2);
+			action.actionString = EditorGUILayout.TextArea(action.actionString, GUILayout.ExpandHeight(true), GUILayout.MaxHeight(60));
 		}
 		else if (action.actionType == SceneAction.Type.Wait){
-			action.waitTime = EditorGUILayout.FloatField("Wait Time", action.waitTime);
+			action.actionFloat = EditorGUILayout.FloatField("Wait Time", action.actionFloat);
 		}
 		else if (action.actionType == SceneAction.Type.SetCameraTarget){
-			action.cameraTarget = EditorGUILayout.Vector3Field("Camera Target", action.cameraTarget);
+			action.actionVector3 = EditorGUILayout.Vector3Field("Camera Target", action.actionVector3);
+		}
+		else if (action.actionType == SceneAction.Type.EnableObject){
+			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(GameObject), true); 
+			action.actionBool = EditorGUILayout.ToggleLeft("Enabled", action.actionBool);
 		}
 	}
 

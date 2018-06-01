@@ -9,8 +9,12 @@ public class CameraController : MonoBehaviour {
 	public GameObject trackingObject;
 	private static Camera cam;
 	public Vector3 initPos;
+	private bool lockedOnTarget;
+
+	public static CameraController instance;
 	// Use this for initialization
 	void Awake(){
+		instance = this;
 		cam = Camera.main;
 		initPos = transform.position;
 	}
@@ -20,11 +24,23 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		target = (Vector2)trackingObject.transform.position + offset;
+		if (!lockedOnTarget){
+			target = (Vector2)trackingObject.transform.position + offset;
+		}
+
 		float x = Mathf.Lerp(transform.position.x, target.x, trackingSpeedX * Time.deltaTime);
 		float y = Mathf.Lerp(transform.position.y, target.y, trackingSpeedY * Time.deltaTime);
 
 		transform.position = new Vector3(x, y, -10);
+	}
+
+	public void LockOnTarget(Vector2 pos){
+		lockedOnTarget = true;
+		target = pos;
+	}
+
+	public void UnlockTarget(){
+		lockedOnTarget = false;
 	}
 
 	public static Camera GetCamera(){

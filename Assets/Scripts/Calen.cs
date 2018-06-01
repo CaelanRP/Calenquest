@@ -10,7 +10,9 @@ public class Calen : MonoBehaviour {
 	public Collider2D body;
 	public LayerMask terrainLayers;
 	public Transform groundRaycastPos;
-	public bool jumping;
+	private bool jumping;
+
+	public bool jumpEnabled;
 
 	public SpriteRenderer exclamation;
 
@@ -25,15 +27,25 @@ public class Calen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		HandleInput();
+		if (controlsActive){
+			HandleInput();
+		}
 	}
 
 	void FixedUpdate(){
 		UpdateGravity();
 		UpdateDrag();
-		rb.AddTorque(player.GetAxis("MoveHorizontal") * -stats.rotateForceAir);
+		UpdateLock();
 		rb.angularVelocity = Mathf.Clamp(rb.angularVelocity,-stats.maxTorque,stats.maxTorque);
-		HandleInputFixed();
+		if (controlsActive){
+			HandleInputFixed();
+		}
+	}
+
+	public bool controlsActive{
+		get{
+			return !CutsceneManager.busy;
+		}
 	}
 
 	public void UpdateGravity(){
@@ -46,6 +58,15 @@ public class Calen : MonoBehaviour {
 		}
 		else{
 			rb.drag = stats.airDrag;
+		}
+	}
+
+	public void UpdateLock(){
+		if (CutsceneManager.busy){
+			rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+		}
+		else{
+			rb.constraints = RigidbodyConstraints2D.None;
 		}
 	}
 
@@ -83,7 +104,7 @@ public class Calen : MonoBehaviour {
 				trigger.Trigger();
 			}
 		}
-		exclamation.enabled = (trigger != null);
+		exclamation.enabled = (trigger != null) && !CutsceneManager.busy;
 	}
 
 	// Slow method, don't call this every frame
