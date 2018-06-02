@@ -54,6 +54,7 @@ public class CutsceneManager : MonoBehaviour {
 	void FinishCutscene(){
 		Debug.Log("Cutscene finished.");
 		CameraController.instance.UnlockTarget();
+		DialogueBox.instance.active = false;
 		busy = false;
 	}
 }

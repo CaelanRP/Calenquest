@@ -7,12 +7,9 @@ public class SceneAction : MonoBehaviour {
 	public string actionString, actionString2 = "";
 	public bool actionBool;
 	public Vector3 actionVector3 = Vector3.zero;
-	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4}
+	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4, InvokeMethod = 5, FlipObject = 6}
 	public Object actionObject;
 	public Type actionType;
-
-
-
 
 	public bool finished, playing;
 	// Use this for initialization
@@ -35,6 +32,7 @@ public class SceneAction : MonoBehaviour {
 		}
 
 		if (actionType == Type.Wait){
+			DialogueBox.instance.active = false;
 			yield return StartCoroutine(Wait());
 		}
 
@@ -53,6 +51,17 @@ public class SceneAction : MonoBehaviour {
 		else if (actionType == Type.EnableObject){
 			((GameObject)actionObject).SetActive(actionBool);
 		}
+
+		else if (actionType == Type.InvokeMethod){
+			if (actionBool){
+				DialogueBox.instance.active = false;
+			}
+			((MonoBehaviour)actionObject).Invoke(actionString, 0);
+		}
+		else if (actionType == Type.FlipObject){
+			GameObject obj = (GameObject)actionObject;
+			obj.transform.localScale = new Vector3(obj.transform.localScale.x * -1, obj.transform.localScale.y, obj.transform.localScale.z);
+		}
 		Finish();
 	}
 
@@ -63,7 +72,21 @@ public class SceneAction : MonoBehaviour {
 
 	IEnumerator DisplayDialogue(){
 		Debug.Log("Playing cutscene...");
-		DialogueBox.instance.speakerText.text = actionString2;
+		if (actionString2 != null && actionString2 != ""){
+			DialogueBox.instance.speakerText.text = actionString2;
+		}
+		else if (actionObject != null){
+			DialogueBox.instance.speakerText.text = ((Speaker)actionObject).speakerName;
+		}
+		else{
+			DialogueBox.instance.speakerText.text = "";
+		}
+
+		if (actionObject != null){
+			Debug.Log("setting speaker.");
+			DialogueBox.instance.speaker = (Speaker)actionObject;
+		}
+
 		yield return DialogueBox.instance.DisplayDialogue(actionString);
 	}
 
@@ -71,5 +94,14 @@ public class SceneAction : MonoBehaviour {
 		Debug.Log("Action Finished.");
 		finished = true;
 		playing = false;
+		ClearVars();
+	}
+
+	private void ClearVars(){
+		actionFloat = 0;
+		actionString = actionString2 = "";
+		actionBool = false;
+		actionVector3 = Vector3.zero;
+		actionObject = null;
 	}
 }

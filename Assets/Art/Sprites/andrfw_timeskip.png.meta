@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a356040ada862f64184d7a8d1205160a
-timeCreated: 1523740211
+timeCreated: 1527918312
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -118,10 +118,10 @@ TextureImporter:
       name: andrfw_timeskip_1
       rect:
         serializedVersion: 2
-        x: 236
-        y: 34
-        width: 289
-        height: 315
+        x: 168
+        y: 26
+        width: 162
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

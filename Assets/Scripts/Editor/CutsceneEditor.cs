@@ -102,7 +102,8 @@ public class CutsceneEditor : Editor {
 
 	void DrawInfo(SceneAction action){
 		if (action.actionType == SceneAction.Type.DialogueLine){
-			action.actionString2 = EditorGUILayout.TextField("Speaker name", action.actionString2);
+			action.actionObject = EditorGUILayout.ObjectField("Speaker", action.actionObject, typeof(Speaker), true);
+			action.actionString2 = EditorGUILayout.TextField("Speaker name (Override)", action.actionString2);
 			action.actionString = EditorGUILayout.TextArea(action.actionString, GUILayout.ExpandHeight(true), GUILayout.MaxHeight(60));
 		}
 		else if (action.actionType == SceneAction.Type.Wait){
@@ -114,6 +115,14 @@ public class CutsceneEditor : Editor {
 		else if (action.actionType == SceneAction.Type.EnableObject){
 			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(GameObject), true); 
 			action.actionBool = EditorGUILayout.ToggleLeft("Enabled", action.actionBool);
+		}
+		else if (action.actionType == SceneAction.Type.InvokeMethod){
+			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(MonoBehaviour), true); 
+			action.actionString = EditorGUILayout.TextField("Method Name", action.actionString);
+			action.actionBool = EditorGUILayout.ToggleLeft("Disable Dialogue", action.actionBool);
+		}
+		else if (action.actionType == SceneAction.Type.FlipObject){
+			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(GameObject), true); 
 		}
 	}
 

@@ -71,11 +71,15 @@ public class Calen : MonoBehaviour {
 	}
 
 	public void HandleInput(){
-		if (grounded && player.GetButtonDown("Jump")){
+		if (jumpEnabled && grounded && player.GetButtonDown("Jump")){
 			Jump();
 			Debug.Log("Jumping");
 		}
 		TestInteract();
+	}
+
+	public void SetJumpEnabled(){
+		jumpEnabled = true;
 	}
 
 	public void HandleInputFixed(){

@@ -10,7 +10,8 @@ public class DialogueBox : MonoBehaviour {
 	public float moveLerp;
 	public static DialogueBox instance;
 	public float charDelay, initDelay;
-
+	[HideInInspector]
+	public Speaker speaker;
 	public TextMeshProUGUI dialogueText, speakerText;
 	// Use this for initialization
 	void Awake () {
@@ -26,14 +27,24 @@ public class DialogueBox : MonoBehaviour {
 
 	public IEnumerator DisplayDialogue(string text){
 		dialogueText.text = "";
-		active = true;
 		int length = 0;
 		int maxLength = text.Length;
-		yield return new WaitForSeconds(initDelay);
+		
+		if (!active){
+			active = true;
+			yield return new WaitForSeconds(initDelay);
+		}
+
+		if (speaker){
+			speaker.FlapMouth();
+		}
 		while (length < maxLength){
 			length ++;
 			yield return new WaitForSeconds(charDelay);
 			dialogueText.text = text.Substring(0, length);
+		}
+		if (speaker){
+			speaker.StopFlapping();
 		}
 
 		while (true){
@@ -42,6 +53,7 @@ public class DialogueBox : MonoBehaviour {
 			}
 			yield return null;
 		}
-		active = false;
+		
+		speaker = null;
 	}
 }

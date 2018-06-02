@@ -21,7 +21,23 @@ GameObject:
   - component: {fileID: 4523362559075362}
   - component: {fileID: 114005895181957890}
   m_Layer: 0
-  m_Name: 'Action 0: DialogueLine'
+  m_Name: 'Action 1: DialogueLine'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1191363104985122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4874218857710296}
+  - component: {fileID: 114637285542000462}
+  m_Layer: 0
+  m_Name: 'Action 8: DialogueLine'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +53,39 @@ GameObject:
   - component: {fileID: 4532190262974984}
   - component: {fileID: 114246994026790576}
   m_Layer: 0
-  m_Name: 'Action 2: DialogueLine'
+  m_Name: 'Action 3: DialogueLine'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1457537725607984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4991203778515822}
+  - component: {fileID: 114284817214824896}
+  m_Layer: 0
+  m_Name: 'Action 10: DialogueLine'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1476377032432686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4812879427638428}
+  - component: {fileID: 114849586571955128}
+  m_Layer: 0
+  m_Name: 'Action 7: SetCameraTarget'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +101,7 @@ GameObject:
   - component: {fileID: 4580960144731622}
   - component: {fileID: 114736325626444322}
   m_Layer: 0
-  m_Name: 'Action 4: SetCameraTarget'
+  m_Name: 'Action 5: SetCameraTarget'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +117,7 @@ GameObject:
   - component: {fileID: 4898545725013024}
   - component: {fileID: 114319127829608464}
   m_Layer: 0
-  m_Name: 'Action 1: SetCameraTarget'
+  m_Name: 'Action 2: SetCameraTarget'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +133,7 @@ GameObject:
   - component: {fileID: 4792816125049890}
   - component: {fileID: 114935230447864188}
   m_Layer: 0
-  m_Name: 'Action 5: DialogueLine'
+  m_Name: 'Action 6: DialogueLine'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +149,39 @@ GameObject:
   - component: {fileID: 4934350778744512}
   - component: {fileID: 114943288437599722}
   m_Layer: 0
-  m_Name: 'Action 3: DialogueLine'
+  m_Name: 'Action 4: DialogueLine'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1747744050462740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4404574072882706}
+  - component: {fileID: 114491467546967374}
+  m_Layer: 0
+  m_Name: 'Action 9: DialogueLine'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1767030467081234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4498455854619306}
+  - component: {fileID: 114124807085933124}
+  m_Layer: 0
+  m_Name: 'Action 11: EnableObject'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +205,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1796378536218236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4813207216025560}
+  - component: {fileID: 114320807752768718}
+  m_Layer: 0
+  m_Name: 'Action 0: EnableObject'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4404574072882706
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747744050462740}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4485080978962176
 Transform:
   m_ObjectHideFlags: 1
@@ -141,8 +250,27 @@ Transform:
   - {fileID: 4934350778744512}
   - {fileID: 4792816125049890}
   - {fileID: 4580960144731622}
+  - {fileID: 4813207216025560}
+  - {fileID: 4812879427638428}
+  - {fileID: 4874218857710296}
+  - {fileID: 4404574072882706}
+  - {fileID: 4991203778515822}
+  - {fileID: 4498455854619306}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4498455854619306
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767030467081234}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4523362559075362
 Transform:
@@ -196,6 +324,45 @@ Transform:
   m_Father: {fileID: 4485080978962176}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4812879427638428
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476377032432686}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4813207216025560
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796378536218236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4874218857710296
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191363104985122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4898545725013024
 Transform:
   m_ObjectHideFlags: 1
@@ -221,6 +388,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4485080978962176}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4991203778515822
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457537725607984}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485080978962176}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61228296034090734
 BoxCollider2D:
@@ -279,12 +459,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions:
+  - {fileID: 114320807752768718}
   - {fileID: 114005895181957890}
   - {fileID: 114319127829608464}
   - {fileID: 114246994026790576}
   - {fileID: 114943288437599722}
   - {fileID: 114736325626444322}
   - {fileID: 114935230447864188}
+  - {fileID: 114849586571955128}
+  - {fileID: 114637285542000462}
+  - {fileID: 114491467546967374}
+  - {fileID: 114284817214824896}
+  - {fileID: 114124807085933124}
 --- !u!114 &114110098272005738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +484,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscene: {fileID: 114032939516978350}
   disableAfterPlay: 1
+--- !u!114 &114124807085933124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767030467081234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: 
+  actionString2: 
+  actionBool: 1
+  actionVector3: {x: 0, y: 0, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 4
+  finished: 0
+  playing: 0
 --- !u!114 &114246994026790576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,6 +518,26 @@ MonoBehaviour:
   actionFloat: 0
   actionString: When you encounter an impossible-seeming obstacle, do you just give
     up on the spot?
+  actionString2: Andrew
+  actionBool: 0
+  actionVector3: {x: 0, y: 0, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 0
+  finished: 0
+  playing: 0
+--- !u!114 &114284817214824896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457537725607984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: '...Then roll on up to these stairs again.'
   actionString2: Andrew
   actionBool: 0
   actionVector3: {x: 0, y: 0, z: 0}
@@ -339,6 +565,67 @@ MonoBehaviour:
   actionType: 1
   finished: 0
   playing: 0
+--- !u!114 &114320807752768718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796378536218236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: 
+  actionString2: 
+  actionBool: 1
+  actionVector3: {x: 0, y: 0, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 4
+  finished: 0
+  playing: 0
+--- !u!114 &114491467546967374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747744050462740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: But if you want a whole new world of vertical movement to open up
+    to you...
+  actionString2: Andrew
+  actionBool: 0
+  actionVector3: {x: 0, y: 0, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 0
+  finished: 0
+  playing: 0
+--- !u!114 &114637285542000462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191363104985122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: Well, if you wanna run away like a coward, I won't stop you.
+  actionString2: Andrew
+  actionBool: 0
+  actionVector3: {x: 0, y: 0, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 0
+  finished: 0
+  playing: 0
 --- !u!114 &114736325626444322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,6 +642,26 @@ MonoBehaviour:
   actionString2: 
   actionBool: 0
   actionVector3: {x: 16.5, y: 7.76, z: 0}
+  actionObject: {fileID: 0}
+  actionType: 1
+  finished: 0
+  playing: 0
+--- !u!114 &114849586571955128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476377032432686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac352acdd95ff44ac33c88cb81e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionFloat: 0
+  actionString: 
+  actionString2: 
+  actionBool: 0
+  actionVector3: {x: 24.5, y: 7.76, z: 0}
   actionObject: {fileID: 0}
   actionType: 1
   finished: 0
@@ -391,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionFloat: 0
-  actionString: Or do you perservere, and LEAP your way over it?
+  actionString: Or do you persevere, and LEAP your way over it?
   actionString2: Andrew
   actionBool: 0
   actionVector3: {x: 0, y: 0, z: 0}
