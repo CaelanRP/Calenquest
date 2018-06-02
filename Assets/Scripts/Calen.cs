@@ -12,11 +12,12 @@ public class Calen : MonoBehaviour {
 	public Transform groundRaycastPos;
 	private bool jumping;
 
-	public bool jumpEnabled;
+	public bool jumpEnabled, hasGun;
 
 	public SpriteRenderer exclamation;
-
+	public GameObject bullet;
 	public static Rewired.Player player;
+	public LayerMask bulletHitMask;
 	// Use this for initialization
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
@@ -75,11 +76,34 @@ public class Calen : MonoBehaviour {
 			Jump();
 			Debug.Log("Jumping");
 		}
+		if (hasGun){
+			TestShoot();
+		}
 		TestInteract();
 	}
 
 	public void SetJumpEnabled(){
 		jumpEnabled = true;
+	}
+
+	public void TestShoot(){
+		if (player.GetButtonDown("Fire")){
+			CancelHorizontalVelocity();
+			rb.AddForce(-transform.right * stats.shotgunKnockback, ForceMode2D.Impulse);
+			if (touchingGround){
+				rb.AddForce(transform.up * stats.shotgunKnockbackUp, ForceMode2D.Impulse);
+			}
+		}
+	}
+
+	public void SpawnBullets(){
+
+	}
+
+	void CancelHorizontalVelocity(){
+		Vector2 locVel = transform.InverseTransformDirection(rb.velocity);
+   		locVel.x = 0;
+   		rb.velocity = transform.TransformDirection(locVel);
 	}
 
 	public void HandleInputFixed(){

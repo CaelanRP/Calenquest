@@ -47,6 +47,9 @@ TagManager:
   - name: NPCs
     uniqueID: 3519414023
     locked: 0
+  - name: Calen
+    uniqueID: 195320413
+    locked: 0
   - name: Terrain
     uniqueID: 2196164289
     locked: 0

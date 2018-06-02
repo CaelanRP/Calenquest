@@ -12,5 +12,7 @@ public class CalenStats : ScriptableObject{
 	public float jumpForce, jumpForceBig, bigJumpDelay, groundRaycastDistance, maxJumpAngle;
 
 	public float interactionRange;
+
+	public float shotgunKnockback, shotgunKnockbackUp, shootFreezeTime;
 	
 }
