@@ -5,18 +5,22 @@ using TMPro;
 
 public class DialogueBox : MonoBehaviour {
 	public Vector3 activePos, hiddenPos;
+	private Vector3 initArrowPos;
 	private RectTransform rectTransform;
+	[HideInInspector]
 	public bool active;
 	public float moveLerp;
 	public static DialogueBox instance;
-	public float charDelay, initDelay;
+	public float charDelay, initDelay, arrowBoopAmount, arrowBlinkDelay;
 	[HideInInspector]
 	public Speaker speaker;
 	public TextMeshProUGUI dialogueText, speakerText;
+	public RectTransform arrow;
 	// Use this for initialization
 	void Awake () {
 		rectTransform = GetComponent<RectTransform>();
 		instance = this;
+		initArrowPos = arrow.anchoredPosition;
 	}
 	
 	// Update is called once per frame
@@ -46,6 +50,8 @@ public class DialogueBox : MonoBehaviour {
 		if (speaker){
 			speaker.StopFlapping();
 		}
+		IEnumerator blink = BlinkArrow();
+		StartCoroutine(blink);
 
 		while (true){
 			if (Calen.player.GetButtonDown("Interact") || (Calen.player.GetButtonDown("Jump"))){
@@ -53,7 +59,19 @@ public class DialogueBox : MonoBehaviour {
 			}
 			yield return null;
 		}
+
+		arrow.gameObject.SetActive(false);
+		StopCoroutine(blink);
 		
 		speaker = null;
+	}
+
+	IEnumerator BlinkArrow(){
+		while(true){
+			arrow.gameObject.SetActive(true);
+			yield return new WaitForSeconds(arrowBlinkDelay);
+			arrow.gameObject.SetActive(false);
+			yield return new WaitForSeconds(arrowBlinkDelay);
+		}
 	}
 }

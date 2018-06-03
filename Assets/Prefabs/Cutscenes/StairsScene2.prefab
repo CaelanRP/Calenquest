@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionFloat: 0
-  actionString: Well, if you wanna run away like a coward, I won't stop you.
+  actionString: Well, if you wanna roll away like a coward, I won't stop you.
   actionString2: Andrew
   actionBool: 0
   actionVector3: {x: 0, y: 0, z: 0}

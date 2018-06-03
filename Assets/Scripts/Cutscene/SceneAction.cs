@@ -94,7 +94,6 @@ public class SceneAction : MonoBehaviour {
 		Debug.Log("Action Finished.");
 		finished = true;
 		playing = false;
-		ClearVars();
 	}
 
 	private void ClearVars(){

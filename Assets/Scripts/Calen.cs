@@ -10,12 +10,12 @@ public class Calen : MonoBehaviour {
 	public Collider2D body;
 	public LayerMask terrainLayers;
 	public Transform groundRaycastPos;
-	private bool jumping;
+	private bool jumping, canWalk;
 
 	public bool jumpEnabled, hasGun;
 
 	public SpriteRenderer exclamation;
-	public GameObject bullet;
+	public GameObject bullet, muzzleFlash;
 	public static Rewired.Player player;
 	public LayerMask bulletHitMask;
 	// Use this for initialization
@@ -52,6 +52,9 @@ public class Calen : MonoBehaviour {
 	public void UpdateGravity(){
 		rb.gravityScale = stats.defaultGrav;
 	}
+
+	// You can only use horizontal force on the ground.
+	// But it's not mega consistent, so you have a few frames of grace period.
 
 	public void UpdateDrag(){
 		if (grounded || touchingGround){
@@ -93,6 +96,8 @@ public class Calen : MonoBehaviour {
 			if (touchingGround){
 				rb.AddForce(transform.up * stats.shotgunKnockbackUp, ForceMode2D.Impulse);
 			}
+
+			StartCoroutine(ShootFX());
 		}
 	}
 
@@ -166,6 +171,12 @@ public class Calen : MonoBehaviour {
 		}
 		rb.AddForce(transform.up * stats.jumpForceBig, ForceMode2D.Impulse);
 		jumping = false;
+	}
+
+	IEnumerator ShootFX(){
+		muzzleFlash.SetActive(true);
+		yield return new WaitForSeconds(0.1f);
+		muzzleFlash.SetActive(false);
 	}
 
 	public bool strafing{
