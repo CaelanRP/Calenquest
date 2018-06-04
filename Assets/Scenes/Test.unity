@@ -690,6 +690,24 @@ Prefab:
       propertyPath: m_Name
       value: Calen
       objectReference: {fileID: 0}
+    - target: {fileID: 4993355252859576, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490017601350, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
+        type: 2}
+      propertyPath: hasGun
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
+        type: 2}
+      propertyPath: jumpEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
   m_IsPrefabParent: 0

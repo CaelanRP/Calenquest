@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 450}
   m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
-  controlID: 22846
+  controlID: 24812
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 304, y: 450}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 22847
+  controlID: 24813
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 304, y: 200}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 22848
+  controlID: 24814
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,8 +201,8 @@ MonoBehaviour:
     height: 433
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
+    m_SelectedIDs: 28fbffff
+    m_LastClickedID: -1240
     m_ExpandedIDs: 4eeffdff28fbffff1afcffff00000000042e0000b62e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -337,9 +337,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.2, y: -5.99, z: 0}
+    m_Target: {x: 3.934289, y: -7.3254437, z: 0}
     speed: 2
-    m_Value: {x: 1.2, y: -5.99, z: 0}
+    m_Value: {x: 3.934289, y: -7.3254437, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -366,9 +366,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 47.80849
+    m_Target: 16.517527
     speed: 2
-    m_Value: 47.80849
+    m_Value: 16.517527
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -433,7 +433,7 @@ MonoBehaviour:
     width: 1145
     height: 256
   m_SearchFilter:
-    m_NameFilter: rewi
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -444,18 +444,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Cutscene
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Cutscene
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Calen\Documents\Calenquest
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 65}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
+    m_SelectedIDs: 54290000
+    m_LastClickedID: 10580
     m_ExpandedIDs: 00000000b22700009e2800005429000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -509,8 +509,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 28fbffff
+    m_LastClickedInstanceID: -1240
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: e4040000de04000000050000e8040000086b000052860000fa1d0000f4040000fa040000f0040000060500006e9d0000720500007e0500006805000078050000841c0000fe1b0000161c0000201c0000a21c00000c1c0000001c0000de8b000078a40100061c0000161d00009884010048d40100f41c0000321c0000ca1c0000101c0000f81c00000a1c00001a23000056220000202200003a2200002422000014ec000046220000da2200004a22000040220000782200002a2200002accfcffe48efcff68220000522200002e22000044220000dc220000302200004822000006240000182400002624000036260000b82700006826000060250000622500006e250000fc090000d8070000322600003e2d00005e2500008e3600001e2a00009ea2feffbc2a00002e3100003c2a0000242a0000542e0000743100000c3200004e2c0000283400002a3900001c31000046310000f4310000000000007e31000076380000da4c000080350000827f000096ab00005ccf000068b300004c4f00009051000032380000aa7a0000380a00006a260000ac2700003e2e000040340000
     m_RenameOverlay:

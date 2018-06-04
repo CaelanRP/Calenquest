@@ -18,9 +18,12 @@ public class Calen : MonoBehaviour {
 	public GameObject bullet, muzzleFlash;
 	public static Rewired.Player player;
 	public LayerMask bulletHitMask;
+	public Sprite normalSprite, gunSprite;
+	private SpriteRenderer sr;
 	// Use this for initialization
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
+		sr = GetComponent<SpriteRenderer>();
 	}
 	void Start () {
 		player = ReInput.players.GetPlayer(0);
@@ -31,6 +34,7 @@ public class Calen : MonoBehaviour {
 		if (controlsActive){
 			HandleInput();
 		}
+		UpdateSprite();
 	}
 
 	void FixedUpdate(){
@@ -47,6 +51,10 @@ public class Calen : MonoBehaviour {
 		get{
 			return !CutsceneManager.busy;
 		}
+	}
+
+	void UpdateSprite(){
+		sr.sprite = hasGun ? gunSprite : normalSprite;
 	}
 
 	public void UpdateGravity(){

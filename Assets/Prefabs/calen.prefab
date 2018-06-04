@@ -321,6 +321,8 @@ MonoBehaviour:
   bulletHitMask:
     serializedVersion: 2
     m_Bits: 0
+  normalSprite: {fileID: 21300000, guid: 7dc613f16c28b9b41ab35c1eab0fed4a, type: 3}
+  gunSprite: {fileID: 21300000, guid: b7e3d05d2aa59984b82ce607d7f1db35, type: 3}
 --- !u!114 &114999214745728218
 MonoBehaviour:
   m_ObjectHideFlags: 1
