@@ -14,8 +14,8 @@ public class birb : MonoBehaviour {
 	void Awake () {
 		rb = GetComponent<Rigidbody2D>();
 		initPos = transform.position;
-		anim = GetComponent<Animator>();
-		sr = GetComponent<SpriteRenderer>();
+		anim = GetComponentInChildren<Animator>();
+		sr = GetComponentInChildren<SpriteRenderer>();
 	}
 
 	void Start(){

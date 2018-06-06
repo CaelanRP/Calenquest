@@ -15,6 +15,7 @@ public class DialogueBox : MonoBehaviour {
 	[HideInInspector]
 	public Speaker speaker;
 	public TextMeshProUGUI dialogueText, speakerText;
+	public float minBlipTime;
 	public RectTransform arrow;
 	// Use this for initialization
 	void Awake () {
@@ -42,9 +43,25 @@ public class DialogueBox : MonoBehaviour {
 		if (speaker){
 			speaker.FlapMouth();
 		}
+		float charTime = charDelay;
+		float blipTime = minBlipTime;
+
+		// Do an initial blip
+		Blip();
 		while (length < maxLength){
-			length ++;
-			yield return new WaitForSeconds(charDelay);
+		
+			charTime -= Time.unscaledDeltaTime;
+			blipTime -= Time.unscaledDeltaTime;
+			if (charTime <= 0){
+				length ++;
+				charTime = charDelay;
+
+				if (blipTime <= 0){
+					Blip();
+					blipTime = minBlipTime;
+				}
+			}
+				yield return null;
 			dialogueText.text = text.Substring(0, length);
 		}
 		if (speaker){
@@ -72,6 +89,12 @@ public class DialogueBox : MonoBehaviour {
 			yield return new WaitForSeconds(arrowBlinkDelay);
 			arrow.gameObject.SetActive(false);
 			yield return new WaitForSeconds(arrowBlinkDelay);
+		}
+	}
+
+	void Blip(){
+		if (speaker && speaker.blipSound != null){
+			AudioManager.instance.source.PlayOneShot(speaker.blipSound);
 		}
 	}
 }

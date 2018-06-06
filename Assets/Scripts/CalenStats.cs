@@ -13,6 +13,9 @@ public class CalenStats : ScriptableObject{
 
 	public float interactionRange;
 
-	public float shotgunKnockback, shotgunKnockbackUp, shootFreezeTime;
+	[Header("Gun")]
+	public int numBullets;
+	public float shotgunKnockback, shotgunKnockbackUp, shootFreezeTime, reloadTime;
+
 	
 }

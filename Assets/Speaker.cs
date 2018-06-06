@@ -5,6 +5,7 @@ using UnityEngine;
 public class Speaker : MonoBehaviour {
 	public string speakerName;
 	private Animator anim;
+	public AudioClip blipSound;
 
 	void Awake(){
 		anim = GetComponent<Animator>();

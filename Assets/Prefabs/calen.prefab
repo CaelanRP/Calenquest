@@ -120,12 +120,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1530348578286892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -5.99, z: 0}
+  m_LocalPosition: {x: -107.7, y: -6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4071102137148050}
-  - {fileID: 4993355252859576}
   - {fileID: 4736490017601350}
+  - {fileID: 4993355252859576}
   - {fileID: 4789128139950260}
   - {fileID: 4083102640997588}
   m_Father: {fileID: 0}
@@ -168,7 +168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055329739742322}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4789128139950260
 Transform:
@@ -194,7 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055329739742322}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50617531082550298
 Rigidbody2D:
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Calen
+  blipSound: {fileID: 8300000, guid: 9ff786a246f4f034d80ae679a59cda81, type: 3}
 --- !u!114 &114764874107018276
 MonoBehaviour:
   m_ObjectHideFlags: 1

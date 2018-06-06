@@ -20,6 +20,7 @@ public class Calen : MonoBehaviour {
 	public LayerMask bulletHitMask;
 	public Sprite normalSprite, gunSprite;
 	private SpriteRenderer sr;
+	private int currentBullets;
 	// Use this for initialization
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
@@ -27,6 +28,9 @@ public class Calen : MonoBehaviour {
 	}
 	void Start () {
 		player = ReInput.players.GetPlayer(0);
+		currentBullets = stats.numBullets;
+
+		StartCoroutine(Reload());
 	}
 	
 	// Update is called once per frame
@@ -98,12 +102,14 @@ public class Calen : MonoBehaviour {
 	}
 
 	public void TestShoot(){
-		if (player.GetButtonDown("Fire")){
+		if (player.GetButtonDown("Fire") && currentBullets > 0){
 			CancelHorizontalVelocity();
 			rb.AddForce(-transform.right * stats.shotgunKnockback, ForceMode2D.Impulse);
 			if (touchingGround){
 				rb.AddForce(transform.up * stats.shotgunKnockbackUp, ForceMode2D.Impulse);
 			}
+
+			currentBullets = Mathf.Max (currentBullets - 1, 0);
 
 			StartCoroutine(ShootFX());
 		}
@@ -185,6 +191,17 @@ public class Calen : MonoBehaviour {
 		muzzleFlash.SetActive(true);
 		yield return new WaitForSeconds(0.1f);
 		muzzleFlash.SetActive(false);
+	}
+
+	IEnumerator Reload(){
+		while(true){
+			if (currentBullets < stats.numBullets){
+				yield return new WaitForSeconds(stats.reloadTime);
+				currentBullets = Mathf.Min(currentBullets + 1, stats.numBullets);
+			}
+			yield return null;
+		}
+		
 	}
 
 	public bool strafing{
