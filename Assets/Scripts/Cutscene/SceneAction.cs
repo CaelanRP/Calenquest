@@ -7,7 +7,8 @@ public class SceneAction : MonoBehaviour {
 	public string actionString, actionString2 = "";
 	public bool actionBool;
 	public Vector3 actionVector3 = Vector3.zero;
-	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4, InvokeMethod = 5, FlipObject = 6}
+	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4, InvokeMethod = 5, FlipObject = 6, 
+	TriggerAnimation = 7}
 	public Object actionObject;
 	public Type actionType;
 
@@ -62,12 +63,16 @@ public class SceneAction : MonoBehaviour {
 			GameObject obj = (GameObject)actionObject;
 			obj.transform.localScale = new Vector3(obj.transform.localScale.x * -1, obj.transform.localScale.y, obj.transform.localScale.z);
 		}
+		else if (actionType == Type.TriggerAnimation){
+			Animator anim = (Animator)actionObject;
+			anim.SetTrigger(actionString);
+		}
 		Finish();
 	}
 
 	IEnumerator Wait(){
 		Debug.Log("Waiting...");
-		yield return new WaitForSeconds(actionFloat);
+		yield return new WaitForSecondsRealtime(actionFloat);
 	}
 
 	IEnumerator DisplayDialogue(){

@@ -124,6 +124,9 @@ public class CutsceneEditor : Editor {
 		else if (action.actionType == SceneAction.Type.FlipObject){
 			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(GameObject), true); 
 		}
+		else if (action.actionType == SceneAction.Type.TriggerAnimation){
+			action.actionObject = EditorGUILayout.ObjectField("Animator", action.actionObject, typeof(Animator), true); 
+		}
 	}
 
 }
