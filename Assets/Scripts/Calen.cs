@@ -13,6 +13,7 @@ public class Calen : MonoBehaviour {
 	private bool jumping, canWalk;
 
 	public bool jumpEnabled, hasGun;
+	public bool active = true;
 
 	public SpriteRenderer exclamation;
 	public GameObject bullet, muzzleFlash;
@@ -53,7 +54,7 @@ public class Calen : MonoBehaviour {
 
 	public bool controlsActive{
 		get{
-			return !CutsceneManager.busy;
+			return !CutsceneManager.busy && active;
 		}
 	}
 
