@@ -126,6 +126,10 @@ public class CutsceneEditor : Editor {
 		}
 		else if (action.actionType == SceneAction.Type.TriggerAnimation){
 			action.actionObject = EditorGUILayout.ObjectField("Animator", action.actionObject, typeof(Animator), true); 
+			action.actionString = EditorGUILayout.TextField("Trigger Name", action.actionString);
+		}
+		else if (action.actionType == SceneAction.Type.PlaySound){
+			action.actionObject = EditorGUILayout.ObjectField("Audio Clip", action.actionObject, typeof(AudioClip), true); 
 		}
 	}
 

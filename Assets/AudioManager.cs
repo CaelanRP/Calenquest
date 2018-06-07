@@ -5,11 +5,17 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
 	[HideInInspector]
-	public AudioSource source;
+	private AudioSource source_;
 	public static AudioManager instance;
 	// Use this for initialization
 	void Awake(){
-		source = GetComponent<AudioSource>();
+		source_ = GetComponent<AudioSource>();
 		instance = this;
+	}
+
+	public static AudioSource source {
+		get{
+			return instance.source_;
+		}
 	}
 }

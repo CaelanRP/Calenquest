@@ -94,7 +94,7 @@ public class DialogueBox : MonoBehaviour {
 
 	void Blip(){
 		if (speaker && speaker.blipSound != null){
-			AudioManager.instance.source.PlayOneShot(speaker.blipSound);
+			AudioManager.source.PlayOneShot(speaker.blipSound);
 		}
 	}
 }

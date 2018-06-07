@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Cutscene\Cutscene.cs" />
      <Compile Include="Assets\Scripts\Cutscene\CutsceneCollider.cs" />
      <Compile Include="Assets\Scripts\Cutscene\CutsceneManager.cs" />
+     <Compile Include="Assets\Scripts\Cutscene\CutsceneStarter.cs" />
      <Compile Include="Assets\Scripts\Cutscene\CutsceneTrigger.cs" />
      <Compile Include="Assets\Scripts\Cutscene\DialogueBox.cs" />
      <Compile Include="Assets\Scripts\Cutscene\SceneAction.cs" />

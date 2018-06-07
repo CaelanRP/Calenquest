@@ -8,7 +8,7 @@ public class SceneAction : MonoBehaviour {
 	public bool actionBool;
 	public Vector3 actionVector3 = Vector3.zero;
 	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4, InvokeMethod = 5, FlipObject = 6, 
-	TriggerAnimation = 7}
+	TriggerAnimation = 7, PlaySound = 8}
 	public Object actionObject;
 	public Type actionType;
 
@@ -66,6 +66,10 @@ public class SceneAction : MonoBehaviour {
 		else if (actionType == Type.TriggerAnimation){
 			Animator anim = (Animator)actionObject;
 			anim.SetTrigger(actionString);
+		}
+		else if (actionType == Type.PlaySound){
+			AudioClip clip = (AudioClip)actionObject; 
+			AudioManager.source.PlayOneShot(clip);
 		}
 		Finish();
 	}
