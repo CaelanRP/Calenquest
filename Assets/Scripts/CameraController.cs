@@ -9,7 +9,8 @@ public class CameraController : MonoBehaviour {
 	public GameObject trackingObject;
 	private static Camera cam;
 	public Vector3 initPos;
-	private bool lockedOnTarget;
+	public bool lockedOnTarget;
+	public bool trackingActive = true;
 
 	public static CameraController instance;
 	// Use this for initialization
@@ -24,7 +25,7 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!lockedOnTarget){
+		if (!lockedOnTarget && trackingActive){
 			target = (Vector2)trackingObject.transform.position + offset;
 		}
 

@@ -18,4 +18,8 @@ public class AudioManager : MonoBehaviour {
 			return instance.source_;
 		}
 	}
+
+	public void StopAll(){
+		source_.Stop();
+	}
 }
