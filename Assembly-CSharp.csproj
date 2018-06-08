@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\Cutscene\Triggerable.cs" />
      <Compile Include="Assets\Scripts\NonRotatingChild.cs" />
      <Compile Include="Assets\Speaker.cs" />
+     <Compile Include="Assets\TextBlooper.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\Anton OFL.txt" />
