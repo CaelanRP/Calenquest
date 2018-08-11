@@ -6,12 +6,15 @@ public class NonRotatingChild : MonoBehaviour {
 
 	private Quaternion initRot;
 	private Vector3 initOffset;
+
+	public float initialRotation;
 	// Use this for initialization
 	void Awake () {
 		if (!transform.parent){
 			this.enabled = false;
 			return;
 		}
+		transform.eulerAngles = new Vector3(0,0,initialRotation);
 		initRot = transform.rotation;
 		initOffset = transform.position - transform.parent.position;
 	}

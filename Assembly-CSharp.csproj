@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\Calen.cs" />
      <Compile Include="Assets\Scripts\CalenDebug.cs" />
      <Compile Include="Assets\Scripts\CalenStats.cs" />
+     <Compile Include="Assets\Scripts\CalenUtil.cs" />
+     <Compile Include="Assets\Scripts\CalenVisualStats.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Cutscene\Cutscene.cs" />
      <Compile Include="Assets\Scripts\Cutscene\CutsceneCollider.cs" />
@@ -81,6 +83,7 @@
      <Compile Include="Assets\Scripts\Data\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\Data\SettingsData.cs" />
      <Compile Include="Assets\Scripts\NonRotatingChild.cs" />
+     <Compile Include="Assets\ShotgunShell.cs" />
      <Compile Include="Assets\Speaker.cs" />
      <Compile Include="Assets\TextBlooper.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

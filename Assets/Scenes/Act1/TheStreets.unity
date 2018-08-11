@@ -1110,23 +1110,15 @@ Prefab:
       propertyPath: m_Name
       value: Calen
       objectReference: {fileID: 0}
-    - target: {fileID: 4993355252859576, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736490017601350, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
         type: 2}
       propertyPath: hasGun
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
         type: 2}
       propertyPath: jumpEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
@@ -1782,22 +1774,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114522768910610186, guid: 7c134605536e17643abe16123e6969fe,
+    - target: {fileID: 114028845414424482, guid: 7c134605536e17643abe16123e6969fe,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114522768910610186, guid: 7c134605536e17643abe16123e6969fe,
+    - target: {fileID: 114028845414424482, guid: 7c134605536e17643abe16123e6969fe,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114028845414424482, guid: 7c134605536e17643abe16123e6969fe,
+    - target: {fileID: 114522768910610186, guid: 7c134605536e17643abe16123e6969fe,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114028845414424482, guid: 7c134605536e17643abe16123e6969fe,
+    - target: {fileID: 114522768910610186, guid: 7c134605536e17643abe16123e6969fe,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -2702,7 +2694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Andrew
-  blipSound: {fileID: 0}
+  blipSound: {fileID: 8300000, guid: 9ff786a246f4f034d80ae679a59cda81, type: 3}
 --- !u!95 &1305058284
 Animator:
   serializedVersion: 3

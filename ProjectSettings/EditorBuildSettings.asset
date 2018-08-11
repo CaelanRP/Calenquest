@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Act1/Hallway.unity
+    guid: 9f4de61b9fb07e842885b121632c3cd8
+  - enabled: 1
+    path: Assets/Scenes/Act1/Roof.unity
+    guid: adef2f12f74d46f4e9949cacd566c3ae
+  - enabled: 1
+    path: Assets/Scenes/Act1/TheStreets.unity
+    guid: dc8062c549d4c44488aecccc0b8b74ec

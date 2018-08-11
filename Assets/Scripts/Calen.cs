@@ -6,17 +6,18 @@ using Rewired;
 public class Calen : MonoBehaviour {
 
 	public CalenStats stats;
+	public CalenVisualStats aesthetics;
 	private Rigidbody2D rb;
 	public Collider2D body;
 	public LayerMask terrainLayers;
-	public Transform groundRaycastPos;
+	public Transform groundRaycastPos, shellSpawnPos, bulletSpawnPos;
 	private bool jumping, canWalk;
 
 	public bool jumpEnabled, hasGun;
 	public bool active = true;
 
 	public SpriteRenderer exclamation;
-	public GameObject bullet, muzzleFlash;
+	public GameObject bullet, muzzleFlash, shotgunShell;
 	public static Rewired.Player player;
 	public LayerMask bulletHitMask;
 	public Sprite normalSprite, gunSprite;
@@ -60,6 +61,7 @@ public class Calen : MonoBehaviour {
 
 	void UpdateSprite(){
 		sr.sprite = hasGun ? gunSprite : normalSprite;
+		sr.color = Color.Lerp(sr.color, Color.white, 8 * Time.deltaTime);
 	}
 
 	public void UpdateGravity(){
@@ -189,6 +191,7 @@ public class Calen : MonoBehaviour {
 	}
 
 	IEnumerator ShootFX(){
+		AudioManager.source.PlayOneShot(aesthetics.shotgunShot);
 		muzzleFlash.SetActive(true);
 		yield return new WaitForSeconds(0.1f);
 		muzzleFlash.SetActive(false);
@@ -198,11 +201,16 @@ public class Calen : MonoBehaviour {
 		while(true){
 			if (currentBullets < stats.numBullets){
 				yield return new WaitForSeconds(stats.reloadTime);
-				currentBullets = Mathf.Min(currentBullets + 1, stats.numBullets);
+				LoadBullet();
 			}
 			yield return null;
 		}
-		
+	}
+
+	void LoadBullet(){
+		currentBullets = Mathf.Min(currentBullets + 1, stats.numBullets);
+		var shell = Instantiate(shotgunShell, shellSpawnPos.position, transform.rotation);
+		AudioManager.source.PlayOneShot(aesthetics.shotgunReload);
 	}
 
 	public bool strafing{
@@ -227,5 +235,18 @@ public class Calen : MonoBehaviour {
 		get{
 			return body.IsTouchingLayers(terrainLayers);
 		}
+	}
+
+	//Raycast down and find the ground spot to track, otherwise just use my position
+	public Vector3 GetCameraSpot(){
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 4, terrainLayers);
+		if (hit && hit.collider){
+			return hit.point;
+		}
+		return transform.position;
+	}
+	[ContextMenu("Take Damage")]
+	public void TakeDamage(){
+		sr.color = Color.red;
 	}
 }
