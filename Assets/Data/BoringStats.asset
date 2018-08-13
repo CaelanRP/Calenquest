@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8662abd8122978a44af98776661d21df, type: 3}
   m_Name: BoringStats
   m_EditorClassIdentifier: 
-  defaultGrav: 20
+  defaultGrav: 24
   defaultDrag: 8
   airDrag: 0
-  walkForceGrounded: 250
+  walkForceGrounded: 220
   footGravForce: 0
   rotateForceGround: 3000
   rotateForceAir: 3000

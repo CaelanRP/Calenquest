@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\Data\SaveData.cs" />
      <Compile Include="Assets\Scripts\Data\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\Data\SettingsData.cs" />
+     <Compile Include="Assets\Scripts\etc\Donk.cs" />
      <Compile Include="Assets\Scripts\NonRotatingChild.cs" />
      <Compile Include="Assets\ShotgunShell.cs" />
      <Compile Include="Assets\Speaker.cs" />

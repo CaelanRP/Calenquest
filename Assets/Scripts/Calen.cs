@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using TMPro;
 
 public class Calen : MonoBehaviour {
 
@@ -246,7 +247,20 @@ public class Calen : MonoBehaviour {
 		return transform.position;
 	}
 	[ContextMenu("Take Damage")]
-	public void TakeDamage(){
+	public void TakeDamageFake(){
 		sr.color = Color.red;
+		StartCoroutine(SpawnDamageNum(1));
+	}
+
+	IEnumerator SpawnDamageNum(int damage){
+		GameObject obj = Instantiate(aesthetics.damageNumPrefab, transform.position + (Vector3)aesthetics.damageNumOffset, Quaternion.identity);
+		obj.GetComponent<TextMeshPro>().text = ("-"+damage);
+		float time = 0f;
+		while (time < aesthetics.damageNumTime){
+			time += Time.deltaTime;
+			obj.transform.Translate((Vector2.up * aesthetics.damageNumDistance * Time.deltaTime) / aesthetics.damageNumTime);
+			yield return null;
+		}
+		Destroy(obj);
 	}
 }

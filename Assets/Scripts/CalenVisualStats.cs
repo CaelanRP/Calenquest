@@ -5,4 +5,8 @@ using UnityEngine;
 public class CalenVisualStats : ScriptableObject{
 	public AudioClip shotgunShot;
     public AudioClip shotgunReload;
+
+    public GameObject damageNumPrefab;
+    public Vector2 damageNumOffset;
+    public float damageNumTime, damageNumDistance;
 }
