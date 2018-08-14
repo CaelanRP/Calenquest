@@ -1113,12 +1113,12 @@ Prefab:
     - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
         type: 2}
       propertyPath: hasGun
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
         type: 2}
       propertyPath: jumpEnabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}

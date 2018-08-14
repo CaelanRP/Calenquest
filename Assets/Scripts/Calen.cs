@@ -247,14 +247,14 @@ public class Calen : MonoBehaviour {
 		return transform.position;
 	}
 	[ContextMenu("Take Damage")]
-	public void TakeDamageFake(){
+	public void TakeDamageFake(int damage = 1){
 		sr.color = Color.red;
-		StartCoroutine(SpawnDamageNum(1));
+		StartCoroutine(SpawnDamageNum(damage));
 	}
 
 	IEnumerator SpawnDamageNum(int damage){
 		GameObject obj = Instantiate(aesthetics.damageNumPrefab, transform.position + (Vector3)aesthetics.damageNumOffset, Quaternion.identity);
-		obj.GetComponent<TextMeshPro>().text = ("-"+damage);
+		obj.GetComponentInChildren<TextMeshProUGUI>().text = ("-"+damage);
 		float time = 0f;
 		while (time < aesthetics.damageNumTime){
 			time += Time.deltaTime;

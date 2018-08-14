@@ -146,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906436641494564}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.3, y: 28.4, z: 0}
+  m_LocalPosition: {x: -4.8, y: 29.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4805273169422034}
@@ -285,17 +285,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1600f01e0a5ce2c4c8f69963cc722747, type: 2}
+  aesthetics: {fileID: 11400000, guid: 89889adea931cf842a4a5218d518dea6, type: 2}
   body: {fileID: 70739139197506142}
   terrainLayers:
     serializedVersion: 2
     m_Bits: 256
   groundRaycastPos: {fileID: 4805273169422034}
+  shellSpawnPos: {fileID: 0}
+  bulletSpawnPos: {fileID: 0}
   jumpEnabled: 0
   hasGun: 0
   active: 1
   exclamation: {fileID: 212426157557801976}
   bullet: {fileID: 0}
   muzzleFlash: {fileID: 1568516413407376}
+  shotgunShell: {fileID: 0}
   bulletHitMask:
     serializedVersion: 2
     m_Bits: 0
@@ -312,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21d06e77193aa14380beef50b012ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialRotation: 0
 --- !u!114 &114946978196677210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,8 +413,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 56864075
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e90f02ecf8c77464ca18855581f7952b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

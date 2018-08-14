@@ -6,9 +6,11 @@ public class ShotgunShell : MonoBehaviour {
 	public Vector2 minEjectForce, maxEjectForce;
 	public float minTorque, maxTorque;
 	private Rigidbody2D rb;
+	float timeSpawned;
 	// Use this for initialization
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
+		timeSpawned = Time.time;
 	}
 	void Start () {
 
@@ -22,4 +24,23 @@ public class ShotgunShell : MonoBehaviour {
 		rb.AddTorque(torque,ForceMode2D.Impulse);
 
 	}
+
+	void OnCollisionStay2D(Collision2D coll){
+		TestBecomeBackground(coll.collider.transform);
+	}
+
+	void OnCollisionEnter2D(Collision2D coll){
+		TestBecomeBackground(coll.collider.transform);
+	}
+
+	void TestBecomeBackground(Transform hit){
+		if (rb && Time.time - timeSpawned > 10){
+			Destroy(rb);
+			Destroy(GetComponent<Collider2D>());
+			transform.SetParent(hit,true);
+		}
+	}
+
+
+
 }

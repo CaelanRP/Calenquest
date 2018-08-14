@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b03a5415950bd4c8c3ce7b51352717, type: 3}
+  m_Name: CalenAesthetics
+  m_EditorClassIdentifier: 
+  shotgunShot: {fileID: 8300000, guid: 97193c423a44b6241aa1cd954616de17, type: 3}
+  shotgunReload: {fileID: 8300000, guid: 3b21b0e3d89618d4e8b3729d4103387b, type: 3}
+  damageNumPrefab: {fileID: 1626974716319974, guid: 95d60176fcb88c64fbcbb74ecd8f600a,
+    type: 2}
+  damageNumOffset: {x: 0, y: 3}
+  damageNumTime: 1.5
+  damageNumDistance: 4

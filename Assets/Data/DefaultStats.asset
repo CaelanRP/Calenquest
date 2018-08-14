@@ -25,7 +25,7 @@ MonoBehaviour:
   groundRaycastDistance: 2
   maxJumpAngle: 90
   interactionRange: 4
-  numBullets: 1
+  numBullets: 3
   shotgunKnockback: 200
   shotgunKnockbackUp: 70
   shootFreezeTime: 0.02
