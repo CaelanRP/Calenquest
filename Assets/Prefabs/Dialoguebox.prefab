@@ -437,8 +437,9 @@ MonoBehaviour:
   speaker: {fileID: 0}
   dialogueText: {fileID: 114028845414424482}
   speakerText: {fileID: 114522768910610186}
-  minBlipTime: 0.05
+  minBlipTime: 0.06
   arrow: {fileID: 224294227926639598}
+  blipSource: {fileID: 82624388744177448}
 --- !u!114 &114966517770652980
 MonoBehaviour:
   m_ObjectHideFlags: 1

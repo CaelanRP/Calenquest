@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Donk : MonoBehaviour {
 	public int damage = 1;
+	public AudioClip clip;
+	public float minAngle = 90;
 
-	void OnTriggerEnter2D(Collider2D coll){
-		Calen c = coll.GetComponent<Calen>();
+	void OnCollisionEnter2D(Collision2D coll){
+		if (!enabled){
+			return;
+		}
+		Calen c = coll.gameObject.GetComponent<Calen>();
 		if (c){
-			if (Vector2.Angle(c.transform.up, Vector2.up) > 90){
+			if (Vector2.Angle(c.transform.up, Vector2.up) > minAngle){
 				c.TakeDamageFake(damage);
-				gameObject.SetActive(false);
+				AudioManager.source.PlayOneShot(clip);
+				
 			}
+			this.enabled = false;
 		}
 	}
 }

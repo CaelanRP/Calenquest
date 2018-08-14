@@ -306,6 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Homeless Greg
+  blipSound: {fileID: 8300000, guid: fe258f6f7969c8e4b946796ba0ca2cae, type: 3}
+  volume: 1
+  pitchVariance: 0.1
 --- !u!114 &114644063550820940
 MonoBehaviour:
   m_ObjectHideFlags: 1

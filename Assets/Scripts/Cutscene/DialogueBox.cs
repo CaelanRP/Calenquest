@@ -17,6 +17,7 @@ public class DialogueBox : MonoBehaviour {
 	public TextMeshProUGUI dialogueText, speakerText;
 	public float minBlipTime;
 	public RectTransform arrow;
+	public AudioSource blipSource;
 	// Use this for initialization
 	void Awake () {
 		rectTransform = GetComponent<RectTransform>();
@@ -94,7 +95,9 @@ public class DialogueBox : MonoBehaviour {
 
 	void Blip(){
 		if (speaker && speaker.blipSound != null){
-			AudioManager.source.PlayOneShot(speaker.blipSound);
+			blipSource.volume = speaker.volume;
+			blipSource.pitch = 1 + Random.Range(-speaker.pitchVariance, speaker.pitchVariance);
+			blipSource.PlayOneShot(speaker.blipSound);
 		}
 	}
 }

@@ -22,23 +22,7 @@ public class ShotgunShell : MonoBehaviour {
 			torque = -torque;
 		}
 		rb.AddTorque(torque,ForceMode2D.Impulse);
-
-	}
-
-	void OnCollisionStay2D(Collision2D coll){
-		TestBecomeBackground(coll.collider.transform);
-	}
-
-	void OnCollisionEnter2D(Collision2D coll){
-		TestBecomeBackground(coll.collider.transform);
-	}
-
-	void TestBecomeBackground(Transform hit){
-		if (rb && Time.time - timeSpawned > 10){
-			Destroy(rb);
-			Destroy(GetComponent<Collider2D>());
-			transform.SetParent(hit,true);
-		}
+		Destroy(gameObject, 15);
 	}
 
 

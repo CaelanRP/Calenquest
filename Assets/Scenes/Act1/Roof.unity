@@ -2172,7 +2172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Nick
-  blipSound: {fileID: 8300000, guid: 9ff786a246f4f034d80ae679a59cda81, type: 3}
+  blipSound: {fileID: 8300000, guid: 196b5aff5854b734eb08febefa095a4e, type: 3}
+  volume: 1
+  pitchVariance: 0.1
 --- !u!95 &1394419005
 Animator:
   serializedVersion: 3

@@ -7,6 +7,9 @@ public class Speaker : MonoBehaviour {
 	private Animator anim;
 	public AudioClip blipSound;
 
+	public float volume = 1;
+	public float pitchVariance = 0.1f;
+
 	void Awake(){
 		anim = GetComponent<Animator>();
 	}
