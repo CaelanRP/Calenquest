@@ -1081,7 +1081,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4055329739742322, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.3
+      value: -114.2
       objectReference: {fileID: 0}
     - target: {fileID: 4055329739742322, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1114,6 +1114,16 @@ Prefab:
     - target: {fileID: 1530348578286892, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
       propertyPath: m_Name
       value: Calen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
+        type: 2}
+      propertyPath: jumpEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764874107018276, guid: 6ab1e04e25c316341ae6dfaf432c1a09,
+        type: 2}
+      propertyPath: hasGun
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ab1e04e25c316341ae6dfaf432c1a09, type: 2}
