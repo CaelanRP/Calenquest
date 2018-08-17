@@ -24,8 +24,11 @@ public class Calen : MonoBehaviour {
 	public Sprite normalSprite, gunSprite;
 	private SpriteRenderer sr;
 	private int currentBullets;
+
+	public static Calen instance;
 	// Use this for initialization
 	void Awake(){
+		instance = this;
 		rb = GetComponent<Rigidbody2D>();
 		sr = GetComponent<SpriteRenderer>();
 	}
@@ -155,7 +158,7 @@ public class Calen : MonoBehaviour {
 				trigger.Trigger();
 			}
 		}
-		exclamation.enabled = (trigger != null) && !CutsceneManager.busy;
+		exclamation.enabled = (trigger != null) && trigger.enabled && !CutsceneManager.busy;
 	}
 
 	// Slow method, don't call this every frame

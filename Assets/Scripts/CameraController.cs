@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 	public Vector2 offset;
+	public bool trackX = true;
+	public bool trackY = true;
 	public float trackingSpeedX, trackingSpeedY;
 	public Vector2 target;
 	public GameObject trackingObject;
@@ -39,8 +41,14 @@ public class CameraController : MonoBehaviour {
 		target.x = Mathf.Max(Mathf.Min(target.x, maxPos.x), minPos.x);
 		target.y = Mathf.Max(Mathf.Min(target.y, maxPos.y), minPos.y);
 		*/
-		float x = Mathf.Lerp(transform.position.x, target.x, trackingSpeedX * Time.deltaTime);
-		float y = Mathf.Lerp(transform.position.y, target.y, trackingSpeedY * Time.deltaTime);
+		float x = transform.position.x;
+		float y = transform.position.y;
+		if (trackX){
+			x = Mathf.Lerp(transform.position.x, target.x, trackingSpeedX * Time.deltaTime);
+		}
+		if (trackY){
+			y = Mathf.Lerp(transform.position.y, target.y, trackingSpeedY * Time.deltaTime);
+		}
 
 		transform.position = new Vector3(x, y, -10);
 	}
@@ -61,6 +69,7 @@ public class CameraController : MonoBehaviour {
 	}
 
 	public void UnlockTarget(){
+		print("unlocking camera.");
 		lockedOnTarget = false;
 	}
 

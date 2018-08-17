@@ -7,6 +7,7 @@ public class CutsceneManager : MonoBehaviour {
 	public static CutsceneManager instance;
 	public static bool busy;
 	public List<SceneAction> queuedActions;
+	public Cutscene currentScene;
 	// Use this for initialization
 	void Awake () {
 		instance = this;
@@ -16,9 +17,10 @@ public class CutsceneManager : MonoBehaviour {
 
 	}
 
-	public void StartNewScene(SceneAction[] actions){
+	public void StartNewScene(Cutscene scene){
 		if (!busy){
-			queuedActions = actions.ToList();
+			currentScene = scene;
+			queuedActions = scene.actions.ToList();
 			busy = true;
 		}
 	}
@@ -53,7 +55,9 @@ public class CutsceneManager : MonoBehaviour {
 
 	void FinishCutscene(){
 		Debug.Log("Cutscene finished.");
-		CameraController.instance.UnlockTarget();
+		if (!currentScene.keepCameraLocked){
+			CameraController.instance.UnlockTarget();
+		}
 		DialogueBox.instance.active = false;
 		busy = false;
 	}

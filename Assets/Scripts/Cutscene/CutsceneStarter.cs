@@ -11,7 +11,7 @@ public class CutsceneStarter : MonoBehaviour {
 		}
 
 		if (cutscene){
-			CutsceneManager.instance.StartNewScene(cutscene.actions);
+			CutsceneManager.instance.StartNewScene(cutscene);
 		}
 	}
 }

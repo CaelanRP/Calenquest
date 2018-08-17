@@ -13,7 +13,7 @@ public class CutsceneTrigger : Triggerable {
 
 	public override void Trigger(){
 		if (cutscene){
-			CutsceneManager.instance.StartNewScene(cutscene.actions);
+			CutsceneManager.instance.StartNewScene(cutscene);
 		}
 	}
 }

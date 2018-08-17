@@ -10,7 +10,7 @@ public class CutsceneCollider : MonoBehaviour {
 		Calen c = coll.GetComponent<Calen>();
 		if (c){
 			if (cutscene && !CutsceneManager.busy){
-				CutsceneManager.instance.StartNewScene(cutscene.actions);
+				CutsceneManager.instance.StartNewScene(cutscene);
 				if (disableAfterPlay){
 					GetComponent<BoxCollider2D>().enabled = false;
 				}

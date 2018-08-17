@@ -8,13 +8,16 @@ public class CutsceneEditor : Editor {
 
 	Cutscene cutscene;
 	SerializedProperty actionsProp;
+	SerializedProperty unlockAtEnd;
 
 	private static bool showActions = true;
+	
 
 	void OnEnable()
 	{
 		cutscene = (Cutscene)target;
 		actionsProp = serializedObject.FindProperty("actions");
+		unlockAtEnd = serializedObject.FindProperty("keepCameraLocked");
 	}
 
 	public override void OnInspectorGUI()
@@ -45,6 +48,7 @@ public class CutsceneEditor : Editor {
 					}
 			}
 		}
+		EditorGUILayout.PropertyField(unlockAtEnd);
 
 		if(GUI.changed)
 		{
@@ -111,6 +115,13 @@ public class CutsceneEditor : Editor {
 		}
 		else if (action.actionType == SceneAction.Type.SetCameraTarget){
 			action.actionVector3 = EditorGUILayout.Vector3Field("Camera Target", action.actionVector3);
+			action.actionBool = EditorGUILayout.Toggle("track X", action.actionBool);
+			action.actionBool2 = EditorGUILayout.Toggle("track Y", action.actionBool2);
+			action.actionBool3 = EditorGUILayout.Toggle("snap", action.actionBool3);
+		}
+		else if (action.actionType == SceneAction.Type.UnlockCamera){
+			action.actionBool = EditorGUILayout.Toggle("track X", action.actionBool);
+			action.actionBool2 = EditorGUILayout.Toggle("track Y", action.actionBool2);
 		}
 		else if (action.actionType == SceneAction.Type.EnableObject){
 			action.actionObject = EditorGUILayout.ObjectField("Object", action.actionObject, typeof(GameObject), true); 
@@ -130,6 +141,9 @@ public class CutsceneEditor : Editor {
 		}
 		else if (action.actionType == SceneAction.Type.PlaySound){
 			action.actionObject = EditorGUILayout.ObjectField("Audio Clip", action.actionObject, typeof(AudioClip), true); 
+		}
+		else if (action.actionType == SceneAction.Type.Warp){
+			action.actionVector3 = EditorGUILayout.Vector3Field("Target", action.actionVector3);
 		}
 	}
 

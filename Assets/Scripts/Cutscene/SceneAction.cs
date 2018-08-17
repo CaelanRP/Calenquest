@@ -5,10 +5,10 @@ using UnityEngine;
 public class SceneAction : MonoBehaviour {
 	public float actionFloat = 0;
 	public string actionString, actionString2 = "";
-	public bool actionBool;
+	public bool actionBool, actionBool2, actionBool3;
 	public Vector3 actionVector3 = Vector3.zero;
 	public enum Type{DialogueLine = 0, SetCameraTarget = 1, UnlockCamera = 2, Wait = 3, EnableObject = 4, InvokeMethod = 5, FlipObject = 6, 
-	TriggerAnimation = 7, PlaySound = 8}
+	TriggerAnimation = 7, PlaySound = 8, Warp = 9}
 	public Object actionObject;
 	public Type actionType;
 
@@ -43,10 +43,17 @@ public class SceneAction : MonoBehaviour {
 
 		else if (actionType == Type.SetCameraTarget){
 			CameraController.instance.LockOnTarget(actionVector3);
+			CameraController.instance.trackX = actionBool;
+			CameraController.instance.trackY = actionBool2;
+			if (actionBool3){
+				CameraController.instance.transform.position = CameraController.instance.target;
+			}
 		}
 
 		else if (actionType == Type.UnlockCamera){
 			CameraController.instance.UnlockTarget();
+			CameraController.instance.trackX = actionBool;
+			CameraController.instance.trackY = actionBool2;
 		}
 
 		else if (actionType == Type.EnableObject){
@@ -70,6 +77,9 @@ public class SceneAction : MonoBehaviour {
 		else if (actionType == Type.PlaySound){
 			AudioClip clip = (AudioClip)actionObject; 
 			AudioManager.source.PlayOneShot(clip);
+		}
+		else if (actionType == Type.Warp){
+			Calen.instance.transform.position = actionVector3;
 		}
 		Finish();
 	}
