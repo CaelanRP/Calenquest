@@ -11,8 +11,8 @@ public class Swivel : MonoBehaviour {
 
 	void Start(){
 		initRotation = transform.eulerAngles.z;
-		StartCoroutine(SwivelRoutine());
 		randomOffset = Random.Range(0f,4f);
+		StartCoroutine(SwivelRoutine());
 	}
 	
 	IEnumerator SwivelRoutine(){

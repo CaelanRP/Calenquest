@@ -11,6 +11,14 @@ public class InactiveZone : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerStay2D(Collider2D coll){
+		Calen c = coll.GetComponent<Calen>();
+		if (c){
+			Quaternion targetAngle = Quaternion.Euler(0,0,180);
+			c.transform.rotation = Quaternion.Slerp(c.transform.rotation, targetAngle, 0.5f);
+		}
+	}
+
 	void OnTriggerExit2D(Collider2D coll){
 		Calen c = coll.GetComponent<Calen>();
 		if (c){

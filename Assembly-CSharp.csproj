@@ -86,10 +86,12 @@
      <Compile Include="Assets\Scripts\Data\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\Data\SettingsData.cs" />
      <Compile Include="Assets\Scripts\etc\Donk.cs" />
+     <Compile Include="Assets\Scripts\Motion\RotateRandomly.cs" />
+     <Compile Include="Assets\Scripts\Motion\Swivel.cs" />
+     <Compile Include="Assets\Scripts\Motion\Translate.cs" />
      <Compile Include="Assets\Scripts\NonRotatingChild.cs" />
      <Compile Include="Assets\ShotgunShell.cs" />
      <Compile Include="Assets\Speaker.cs" />
-     <Compile Include="Assets\Swivel.cs" />
      <Compile Include="Assets\TextBlooper.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
