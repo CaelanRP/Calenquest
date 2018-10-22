@@ -11,6 +11,15 @@ public class clubLights : MonoBehaviour {
 		sprites = GetComponentsInChildren<SpriteRenderer>().ToList();
 		StartCoroutine(Blink());
 	}
+
+	public void StopLights(){
+		StopAllCoroutines();
+		sprites.ForEach(s => s.enabled = false);
+	}
+
+	public void StartLights(){
+		StartCoroutine(Blink());
+	}
 	
 	IEnumerator Blink(){
 		while (true){

@@ -37,6 +37,7 @@ public class Calen : MonoBehaviour {
 		currentBullets = stats.numBullets;
 
 		StartCoroutine(Reload());
+		UpdateSprite();
 	}
 	
 	// Update is called once per frame
